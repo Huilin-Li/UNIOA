@@ -2,7 +2,7 @@ from .optimizer_running import optimizer_running
 import sys,os
 
 
-def comparing (Algs, problems, instances, dimensions, num_runs, paras_set):
+def comparing (Algs, problems, instances, dimensions, num_runs, paras_sets):
     '''
     Algs: a list of strings
     problems: a list of integers
@@ -15,10 +15,10 @@ def comparing (Algs, problems, instances, dimensions, num_runs, paras_set):
     instances = instances
     dimensions = dimensions
     num_runs = num_runs
-    paras_set = paras_set
 
     for alg in Algs:
         optimizer_name = alg
+        paras_set = paras_sets[alg]
         optimizer_running(problems, instances, dimensions, num_runs, paras_set, optimizer_name)
 
 

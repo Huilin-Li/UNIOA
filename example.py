@@ -80,12 +80,10 @@ if __name__ == '__main__':
     instances = [1,2]
     dimensions = [5]
     num_runs = 5
-    paras_set = {'BA_Opt': {},
+    paras_sets = {'BA_Opt': {},
                  'Your_Opt':{'M':10,
                              'z_0':1,
                              'w1': 0.8,
                              'w2': 0.6,
                              'w3': 0.7}}
-
-
-    comparison.comparing(Algs)
+    comparison.comparing(Algs, problems, instances, dimensions, num_runs, paras_sets)
