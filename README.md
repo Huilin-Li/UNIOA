@@ -5,6 +5,7 @@
 - [ Example. ](#exm)
   - [ customized optimizer. ](#exm1)
   - [ benchmark and comparison. ](#exm2)
+  - [ results of example experiment. ](#exm3)
 - [ Versions. ](#ver)
 
 <a name="desc"></a>
@@ -155,15 +156,6 @@ class Your_Opt(NatureOpt):
             X_Fit = new_X_Fit
 ```
 
-
-
-
-
-
-
-
-<a name="ver"></a>
-
 <a name="exm2"></a>
 ### benchmark and comparison
 Want to benchmark and compare Bat-optimizer and Your_Opt on 4 problems with 2 instances and 5 runs.
@@ -181,9 +173,14 @@ if __name__ == '__main__':
                              'w2': 0.6,
                              'w3': 0.7}}
     comparison.comparing(Algs, problems, instances, dimensions, num_runs, paras_sets)
-
 ```
 
+<a name="exm3"></a>
+### results of example experiment
+Upload data to [IOHanalyzer](https://iohanalyzer.liacs.nl/). Conclude Your_Opt performs worse than Bat_Opt.
+![results](ERT_Mult-2021-12-31.png)
 
+
+<a name="ver"></a>
 ## Versions
 `2021.12.31: only works in .py file now`
