@@ -56,10 +56,10 @@ from UNIOA import *
 4. design your optimizer in math.\
 For example:
 I want to use follows to design the optimizer.\
-  -assisting vector influencing factor <img src="https://latex.codecogs.com/svg.image?\mathbf{y}_i" title="\mathbf{y}_i" />.
-  -$\mathbf{x}$ related vector influencing factor $\mathbf{x}_{i_p}$.
-  -dynamic numberical influencing factor $z$. 
-  -static numberical influencing factors $w$.
+   (1)assisting vector influencing factor <img src="https://latex.codecogs.com/svg.image?\mathbf{y}_i" title="\mathbf{y}_i" />.\
+   (2)$\mathbf{x}$ related vector influencing factor $\mathbf{x}_{i_p}$.\
+   (3)dynamic numberical influencing factor $z$.\
+   (4)static numberical influencing factors $w$.\
 
 
 `
