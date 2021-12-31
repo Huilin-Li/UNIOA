@@ -60,7 +60,7 @@ For example, I want to use follows to design the optimizer.\
    (3) dynamic numberical influencing factor <img src="https://latex.codecogs.com/svg.image?z" title="z" />.\
    (4) static numberical influencing factors <img src="https://latex.codecogs.com/svg.image?w" title="w" />.
 5. design each component in math.\
-   (1)To <img src="https://latex.codecogs.com/svg.image?\mathbf{y}_i" title="\mathbf{y}_i" />:\
+   (1)To <img src="https://latex.codecogs.com/svg.image?\mathbf{y}_i" title="\mathbf{y}_i" />\
       1.initialize method selected in UNIOA
    ````python
     Init_Delta_Y.your = Init_Delta_Y.x_type
