@@ -54,15 +54,14 @@ example.py
 from UNIOA import *
 ````
 4. design your optimizer in math.\
-For example:
-I want to use follows to design the optimizer.\
-   (1)assisting vector influencing factor <img src="https://latex.codecogs.com/svg.image?\mathbf{y}_i" title="\mathbf{y}_i" />.\
-   (2)$\mathbf{x}$ related vector influencing factor $\mathbf{x}_{i_p}$.\
-   (3)dynamic numberical influencing factor $z$.\
-   (4)static numberical influencing factors $w$.\
+For example, I want to use follows to design the optimizer.\
+   (1) assisting vector influencing factor <img src="https://latex.codecogs.com/svg.image?\mathbf{y}_i" title="\mathbf{y}_i" />.\
+   (2) <img src="https://latex.codecogs.com/svg.image?\mathbf{x}" title="\mathbf{x}" /> related vector influencing factor <img src="https://latex.codecogs.com/svg.image?\mathbf{x}_{i_p}" title="\mathbf{x}_{i_p}" />.\
+   (3) dynamic numberical influencing factor <img src="https://latex.codecogs.com/svg.image?z" title="z" />.\
+   (4) static numberical influencing factors <img src="https://latex.codecogs.com/svg.image?w" title="w" />.
+5.    
 
 
-`
 
 <a name="ver"></a>
 ## Versions
