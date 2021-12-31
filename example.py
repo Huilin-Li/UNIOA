@@ -1,39 +1,39 @@
 from UNIOA import *
 
+# main optimization on x
+def your_Opt_X(old_x, y, x_ip, z, w):
+    new_x = ( old_x * z - y )*w + x_ip
+    return new_x
+Opt_X.your = your_Opt_X
 
+# influencing factors
+## influencing factor y
 Init_Delta_Y.your = Init_Delta_Y.x_type
+def your_Opt_Delta_Y(old_y, w):
+    new_y = old_y * w
+    return new_y
+Opt_Delta_Y.your = your_Opt_Delta_Y
 
-
+## influencing factor x-related
 Init_Delta_X.your = Init_Delta_X.Personal_best
 Opt_Delta_X.your = Opt_Delta_X.Personal_best
-#---------------------------------------------------------------------------------------------------------
-# 3.initialize dynamic numerical influencing factor z
-## code math
+
+## influencing factor z
 def your_InitOpt_Delta_z(t, old_z, w):
     if t == 0:
         new_z = old_z
     else:
         new_z = old_z * w
     return new_z
-## assign to framework
 InitOpt_Delta_z.your = your_InitOpt_Delta_z
-#---------------------------------------------------------------------------------------------------------
-# 4. update assisting vector influencing factor y
-## code math
-def your_Opt_Delta_Y(old_y, w):
-    new_y = old_y * w
-    return new_y
-## assign to framework
-Opt_Delta_Y.your = your_Opt_Delta_Y
-#---------------------------------------------------------------------------------------------------------
-# 5. update x related vector influencing factor x_ip
-## select one in UNIOA
-Opt_Delta_X.your = Opt_Delta_X.Personal_best
 
+# main optimization on x
 def your_Opt_X(old_x, y, x_ip, z, w):
     new_x = ( old_x * z - y )*w + x_ip
     return new_x
 Opt_X.your = your_Opt_X
+
+
 #---------------------------------------------------------------------------------------------------------
 # 8. Selection method
 ## select one in UNIOA

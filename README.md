@@ -78,14 +78,24 @@ def your_Opt_Delta_Y(old_y, w):
     return new_y
 Opt_Delta_Y.your = your_Opt_Delta_Y
 ```
-  (2)To <img src="https://latex.codecogs.com/svg.image?\mathbf{x}_{i_p}" title="\mathbf{x}_{i_p}" /> , the optimize methods designed as
+  (2)To <img src="https://latex.codecogs.com/svg.image?\mathbf{x}_{i_p}" title="\mathbf{x}_{i_p}" /> , the optimize methods selected in UNIOA
 ```python
 # initialize method selected in UNIOA
 Init_Delta_X.your = Init_Delta_X.Personal_best
 # optimize method selected in UNIOA
 Opt_Delta_X.your = Opt_Delta_X.Personal_best
 ```
-
+  (3)To <img src="https://latex.codecogs.com/svg.image?z" title="z" /> , the optimize methods designed as <img src="https://latex.codecogs.com/svg.image?z(t&plus;1)=z(t)\times&space;w" title="z(t+1)=z(t)\times w" />
+```python
+# initialize and optimize method customized by yourself
+def your_InitOpt_Delta_z(t, old_z, w):
+    if t == 0:
+        new_z = old_z
+    else:
+        new_z = old_z * w
+    return new_z
+InitOpt_Delta_z.your = your_InitOpt_Delta_z
+```
 
 
 <a name="ver"></a>
