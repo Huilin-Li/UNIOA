@@ -3,9 +3,9 @@ from UNIOA import *
 
 Init_Delta_Y.your = Init_Delta_Y.x_type
 
-# 2.initialize x related vector influencing factor x_ip
-## select one in UNIOA
+
 Init_Delta_X.your = Init_Delta_X.Personal_best
+Opt_Delta_X.your = Opt_Delta_X.Personal_best
 #---------------------------------------------------------------------------------------------------------
 # 3.initialize dynamic numerical influencing factor z
 ## code math
