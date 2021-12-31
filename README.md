@@ -3,6 +3,8 @@
 - [ Ideas. ](#idea)
 - [ Environment. ](#env)
 - [ Example. ](#exm)
+  - [ customized optimizer. ](#exm1)
+  - [ benchmark and comparison. ](#exm2)
 - [ Versions. ](#ver)
 
 <a name="desc"></a>
@@ -39,6 +41,8 @@ sklearn = 1.0
 ```
 <a name="exm"></a>
 ## Example
+<a name="exm1"></a>
+### customized optimizer
 1. install relative packages
 ```python
 pip install ioh == 0.3.2.3
@@ -159,5 +163,10 @@ class Your_Opt(NatureOpt):
 
 
 <a name="ver"></a>
+
+<a name="exm2"></a>
+### benchmark and comparison
+
+
 ## Versions
 `2021.12.31: only works in .py file now`
