@@ -105,7 +105,58 @@ w1 = 0.8 # assist z
 w2 = 0.6 # assist to update y
 w3 = 0.7 # assist to update x
 ```
-7. **put each component in fixed position**.\ 
+7. **put each component in fixed position**. 
+```python
+# fixed 
+class Your_Opt(NatureOpt): 
+    def __init__(self, func, hyperparams_set, budget_factor=1e4):
+        super().__init__(func, budget_factor)
+```
+```python
+# open to the user
+        self.M = hyperparams_set.get('M')
+        self.z_0 = hyperparams_set.get('z_0')
+        self.w1 = hyperparams_set.get('w1')
+        self.w2 = hyperparams_set.get('w2')
+        self.w3 = hyperparams_set.get('w3')
+```
+```python
+# fixed
+    def __call__(self):
+        t = 0
+        X = self.Init_X.Init_X(M=self.M, n=self.n, lb_x=self.lb_x, ub_x=self.ub_x)
+        X_Fit = self.Evaluate_X(X=X)
+```
+```python
+# fixed position, open inputs
+        Y = self.Init_Delta_Y.x_type(X=X)
+        X_ip, X_ip_Fit = self.Init_Delta_X.Personal_best(new_X=X, new_X_Fit=X_Fit)
+        z = self.InitOpt_Delta_z.your(t=t, old_z=self.z_0,w=self.w1)
+```
+```python
+# fixed
+        while not self.stop:
+```
+```python
+# fixed position, open inputs
+            new_Y = self.Opt_Delta_Y.your(old_y=Y, w=self.w2)
+            temp_X = self.Opt_X.your(old_x=X, y=new_Y, x_ip=X_ip, z=z, w=self.w3)
+            temp_X_Fit = self.Evaluate_X(X=X)
+            new_X, new_X_Fit = self.Selection.your(temp_X=temp_X, temp_X_Fit=temp_X_Fit, old_X=X, old_X_Fit=X_Fit)
+
+            t = t + 1
+            z = self.InitOpt_Delta_z.your(t=t, old_z=z,w=self.w1)
+            X_ip, X_ip_Fit = self.Opt_Delta_X.your(new_X=new_X, new_X_Fit=new_X_Fit, old_X_p=X_ip, old_X_p_Fit=X_ip_Fit)
+            X = new_X
+            X_Fit = new_X_Fit
+```
+
+
+
+
+
+
+
 
 <a name="ver"></a>
 ## Versions
