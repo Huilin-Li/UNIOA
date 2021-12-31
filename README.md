@@ -68,7 +68,7 @@ def your_Opt_X(old_x, y, x_ip, z, w):
 Opt_X.your = your_Opt_X
 ```
 6. design each component in math and code.\
-   (1)To <img src="https://latex.codecogs.com/svg.image?\mathbf{y}_i" title="\mathbf{y}_i" /> , the optimize methods designed as <img src="https://latex.codecogs.com/svg.image?\mathbf{y}_i(t&plus;1)=\mathbf{y}_i(t)\times&space;w_2" title="\mathbf{y}_i(t+1)=\mathbf{y}_i(t)\times w_2" />
+   (1)To <img src="https://latex.codecogs.com/svg.image?\mathbf{y}_i" title="\mathbf{y}_i" /> , the optimize method designed as <img src="https://latex.codecogs.com/svg.image?\mathbf{y}_i(t&plus;1)=\mathbf{y}_i(t)\times&space;w_2" title="\mathbf{y}_i(t+1)=\mathbf{y}_i(t)\times w_2" />
 ```python
 # initialize method selected in UNIOA
 Init_Delta_Y.your = Init_Delta_Y.x_type
@@ -78,14 +78,14 @@ def your_Opt_Delta_Y(old_y, w):
     return new_y
 Opt_Delta_Y.your = your_Opt_Delta_Y
 ```
-  (2)To <img src="https://latex.codecogs.com/svg.image?\mathbf{x}_{i_p}" title="\mathbf{x}_{i_p}" /> , the optimize methods selected in UNIOA
+  (2)To <img src="https://latex.codecogs.com/svg.image?\mathbf{x}_{i_p}" title="\mathbf{x}_{i_p}" /> , the optimize method selected in UNIOA
 ```python
 # initialize method selected in UNIOA
 Init_Delta_X.your = Init_Delta_X.Personal_best
 # optimize method selected in UNIOA
 Opt_Delta_X.your = Opt_Delta_X.Personal_best
 ```
-  (3)To <img src="https://latex.codecogs.com/svg.image?z" title="z" /> , the optimize methods designed as <img src="https://latex.codecogs.com/svg.image?z(t&plus;1)=z(t)\times&space;w" title="z(t+1)=z(t)\times w" />
+  (3)To <img src="https://latex.codecogs.com/svg.image?z" title="z" /> , the optimize method designed as <img src="https://latex.codecogs.com/svg.image?z(t&plus;1)=z(t)\times&space;w" title="z(t+1)=z(t)\times w" />
 ```python
 # initialize and optimize method customized by yourself
 def your_InitOpt_Delta_z(t, old_z, w):
@@ -96,7 +96,15 @@ def your_InitOpt_Delta_z(t, old_z, w):
     return new_z
 InitOpt_Delta_z.your = your_InitOpt_Delta_z
 ```
-
+  (4)To <img src="https://latex.codecogs.com/svg.image?w" title="w" /> , summarize all pre-set static parameters.
+```python
+# initialize/setup static numerical influencing factors
+M = 10
+z_0 = 1 # assizt z
+w1 = 0.8 # assist z
+w2 = 0.4 # assist to update y
+w3 = 0.98 # assist to update x
+```
 
 <a name="ver"></a>
 ## Versions

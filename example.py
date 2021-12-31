@@ -33,17 +33,14 @@ def your_Opt_X(old_x, y, x_ip, z, w):
     return new_x
 Opt_X.your = your_Opt_X
 
-
-#---------------------------------------------------------------------------------------------------------
-# 8. Selection method
-## select one in UNIOA
+# Selection method
 Selection.your = Selection.improve_type
-# 7. initialize/setup static numerical influencing factors
-# M = 10
-# z_0 = 1 # assizt z
-# w1 = 0.8 # assist z
-# w2 = 0.4 # assist to update y
-# w3 = 0.98 # assist to update x
+# initialize/setup static numerical influencing factors
+M = 10
+z_0 = 1 # assizt z
+w1 = 0.8 # assist z
+w2 = 0.4 # assist to update y
+w3 = 0.98 # assist to update x
 
 class Your_Opt(NatureOpt):
     def __init__(self, func, hyperparams_set, budget_factor=1e4):
