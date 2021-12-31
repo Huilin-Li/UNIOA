@@ -3,9 +3,8 @@ import ioh
 from datetime import datetime
 from .algs import *
 import sys, os
-import importlib
 from pydoc import locate
-# my_class = locate('my_package.my_module.MyClass')
+
 
 def optimizer_running(problems, instances, dimensions, num_runs, paras_set, optimizer_name):
     t = 0
@@ -15,8 +14,7 @@ def optimizer_running(problems, instances, dimensions, num_runs, paras_set, opti
         t = 1
         file_name = os.path.basename(sys.argv[0])[:-2]
         your_optimizer_name = locate(file_name + optimizer_name)
-        # file_name = os.path.basename(sys.argv[0])[:-3]
-        # importlib.import_module(file_name + optimizer_name)
+
 
     folder_name = optimizer_name_temp + '_folder'
     data_name = optimizer_name_temp

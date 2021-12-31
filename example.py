@@ -39,17 +39,17 @@ Selection.your = Selection.improve_type
 M = 10
 z_0 = 1 # assizt z
 w1 = 0.8 # assist z
-w2 = 0.4 # assist to update y
-w3 = 0.98 # assist to update x
+w2 = 0.6 # assist to update y
+w3 = 0.7 # assist to update x
 
 class Your_Opt(NatureOpt):
     def __init__(self, func, hyperparams_set, budget_factor=1e4):
         super().__init__(func, budget_factor)
-        self.M = hyperparams_set.get('M', 10)
-        self.z_0 = hyperparams_set.get('z_0', 1)
-        self.w1 = hyperparams_set.get('w1', 0.8)
-        self.w2 = hyperparams_set.get('w2', 0.4)
-        self.w3 = hyperparams_set.get('w3', 0.98)
+        self.M = hyperparams_set.get('M')
+        self.z_0 = hyperparams_set.get('z_0')
+        self.w1 = hyperparams_set.get('w1')
+        self.w2 = hyperparams_set.get('w2')
+        self.w3 = hyperparams_set.get('w3')
 
 
     def __call__(self):
@@ -76,4 +76,16 @@ class Your_Opt(NatureOpt):
 
 if __name__ == '__main__':
     Algs = ['BA_Opt', 'Your_Opt']
+    problems = [1,2,3,4]
+    instances = [1,2]
+    dimensions = [5]
+    num_runs = 5
+    paras_set = {'BA_Opt': {},
+                 'Your_Opt':{'M':10,
+                             'z_0':1,
+                             'w1': 0.8,
+                             'w2': 0.6,
+                             'w3': 0.7}}
+
+
     comparison.comparing(Algs)

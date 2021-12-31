@@ -2,7 +2,7 @@ from .optimizer_running import optimizer_running
 import sys,os
 
 
-def comparing (Algs, problems=[3], instances=[1], dimensions=[5], num_runs=5, paras_set={}):
+def comparing (Algs, problems, instances, dimensions, num_runs, paras_set):
     '''
     Algs: a list of strings
     problems: a list of integers

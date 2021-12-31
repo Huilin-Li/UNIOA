@@ -67,7 +67,7 @@ def your_Opt_X(old_x, y, x_ip, z, w):
     return new_x
 Opt_X.your = your_Opt_X
 ```
-6. design each component in math and code.\
+6. **design each component in math and code**.\
    (1)To <img src="https://latex.codecogs.com/svg.image?\mathbf{y}_i" title="\mathbf{y}_i" /> , the optimize method designed as <img src="https://latex.codecogs.com/svg.image?\mathbf{y}_i(t&plus;1)=\mathbf{y}_i(t)\times&space;w_2" title="\mathbf{y}_i(t+1)=\mathbf{y}_i(t)\times w_2" />
 ```python
 # initialize method selected in UNIOA
@@ -102,9 +102,10 @@ InitOpt_Delta_z.your = your_InitOpt_Delta_z
 M = 10
 z_0 = 1 # assizt z
 w1 = 0.8 # assist z
-w2 = 0.4 # assist to update y
-w3 = 0.98 # assist to update x
+w2 = 0.6 # assist to update y
+w3 = 0.7 # assist to update x
 ```
+7. **put each component in fixed position**.\ 
 
 <a name="ver"></a>
 ## Versions
