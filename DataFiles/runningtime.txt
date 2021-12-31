@@ -1,2 +1,9 @@
 12/31/2021, 17:51:06 | BA_Opt: 0.76 minutes.
 12/31/2021, 17:51:15 | Your_Opt: 0.14 minutes.
+12/31/2021, 18:45:13 | BA_Opt: 0.02 minutes.
+12/31/2021, 18:45:13 | CSA_Opt: 0.0 minutes.
+12/31/2021, 18:45:14 | MFO_Opt: 0.01 minutes.
+12/31/2021, 18:45:14 | PSO_Opt: 0.01 minutes.
+12/31/2021, 18:45:19 | GOA_Opt: 0.08 minutes.
+12/31/2021, 18:45:24 | MBO_Opt: 0.08 minutes.
+12/31/2021, 18:45:26 | BOA_Opt: 0.03 minutes.

@@ -91,10 +91,10 @@ if __name__ == '__main__':
 
     # This is for discussion on M in my master thesis
     Algs = ['BA_Opt', 'CSA_Opt', 'MFO_Opt', 'PSO_Opt', 'GOA_Opt', 'MBO_Opt', 'BOA_Opt']
-    problems = [i for i in range(1, 2)]
-    instances = [i for i in range(1, 2)]
-    dimensions = [5]
-    num_runs = 1
+    problems = [i for i in range(1, 25)]
+    instances = [i for i in range(1, 6)]
+    dimensions = [5,20]
+    num_runs = 5
     paras_sets = {'BA_Opt': {'M':10},
                   'CSA_Opt': {'M':10},
                   'MFO_Opt': {'M':10},
