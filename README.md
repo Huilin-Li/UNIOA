@@ -54,17 +54,23 @@ example.py
 from UNIOA import *
 ````
 4. make sure what components will exist in your optimizer.\
-For example, I want to use follows to design the optimizer.\
+For example, You want to use follows to design the optimizer.\
    (1) assisting vector influencing factor <img src="https://latex.codecogs.com/svg.image?\mathbf{y}_i" title="\mathbf{y}_i" />.\
    (2) <img src="https://latex.codecogs.com/svg.image?\mathbf{x}" title="\mathbf{x}" /> related vector influencing factor <img src="https://latex.codecogs.com/svg.image?\mathbf{x}_{i_p}" title="\mathbf{x}_{i_p}" />.\
    (3) dynamic numberical influencing factor <img src="https://latex.codecogs.com/svg.image?z" title="z" />.\
    (4) static numberical influencing factors <img src="https://latex.codecogs.com/svg.image?w" title="w" />.
-5. design each component in math.\
+5. design each component in math and code.\
    (1)To <img src="https://latex.codecogs.com/svg.image?\mathbf{y}_i" title="\mathbf{y}_i" />
    ````python
-   # 1. initialize method selected in UNIOA
+   # initialize method selected in UNIOA
     Init_Delta_Y.your = Init_Delta_Y.x_type
+   # optimize method customized by yourself as the following math formula
+   def your_Opt_Delta_Y(old_y, w):
+        new_y = old_y * w
+        return new_y
+   Opt_Delta_Y.your = your_Opt_Delta_Y
    ````
+<img src="https://latex.codecogs.com/svg.image?\mathbf{y}_i(t&plus;1)=\mathbf{y}_i(t)\times&space;w_2" title="\mathbf{y}_i(t+1)=\mathbf{y}_i(t)\times w_2" />
 
 
 

@@ -1,9 +1,8 @@
 from UNIOA import *
 
-# 1.initialize assisting vector influencing factor y
-## select one in UNIOA
+
 Init_Delta_Y.your = Init_Delta_Y.x_type
-#---------------------------------------------------------------------------------------------------------
+
 # 2.initialize x related vector influencing factor x_ip
 ## select one in UNIOA
 Init_Delta_X.your = Init_Delta_X.Personal_best
