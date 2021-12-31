@@ -29,13 +29,10 @@ Opt_Delta_Y.your = your_Opt_Delta_Y
 # 5. update x related vector influencing factor x_ip
 ## select one in UNIOA
 Opt_Delta_X.your = Opt_Delta_X.Personal_best
-#---------------------------------------------------------------------------------------------------------
-# 5. update x
-## code math
+
 def your_Opt_X(old_x, y, x_ip, z, w):
     new_x = ( old_x * z - y )*w + x_ip
     return new_x
-## assign to framework
 Opt_X.your = your_Opt_X
 #---------------------------------------------------------------------------------------------------------
 # 8. Selection method
