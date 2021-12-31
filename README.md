@@ -49,9 +49,13 @@ pip install UNIOA
 ````python
 from UNIOA import *
 ````
-$$Opt_{\mathbf{x}}: \, \mathbf{x}=1$$
-
-
+4. design your optimizer in math. For example:
+- I want to use follows to improve the quality of optimization.
+    - assisting vector influencing factor $\mathbf{y}_i$.
+    - $\mathbf{x}$ related vector influencing factor $\mathbf{x}_{i_p}$. 
+    - dynamic numberical influencing factor $z$. 
+    - static numberical influencing factors $w$.
+<img src="https://latex.codecogs.com/svg.image?\textbf{y}_{i}" title="\textbf{y}_{i}" />
 
 <a name="ver"></a>
 ## Versions
