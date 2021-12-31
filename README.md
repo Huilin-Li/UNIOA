@@ -58,6 +58,7 @@ You want to use follows to design the optimizer.\
    (2) <img src="https://latex.codecogs.com/svg.image?\mathbf{x}" title="\mathbf{x}" /> related vector influencing factor <img src="https://latex.codecogs.com/svg.image?\mathbf{x}_{i_p}" title="\mathbf{x}_{i_p}" />.\
    (3) dynamic numberical influencing factor <img src="https://latex.codecogs.com/svg.image?z" title="z" />.\
    (4) static numberical influencing factors <img src="https://latex.codecogs.com/svg.image?w" title="w" />.
+   
 5. design a method to update <img src="https://latex.codecogs.com/svg.image?\mathbf{x}_{i}" title="\mathbf{x}_{i}" /> as <img src="https://latex.codecogs.com/svg.image?\mathbf{x}_i(t&plus;1)=(\mathbf{x}_i(t)\times&space;z(t)&space;-&space;\mathbf{y}_i(t))\times&space;w_1&space;&plus;&space;\mathbf{x}_{i_p}(t)" title="\mathbf{x}_i(t+1)=(\mathbf{x}_i(t)\times z(t) - \mathbf{y}_i(t))\times w_1 + \mathbf{x}_{i_p}(t)" />
 6. design each component in math and code.\
    (1)To <img src="https://latex.codecogs.com/svg.image?\mathbf{y}_i" title="\mathbf{y}_i" /> , the optimize methods designed as <img src="https://latex.codecogs.com/svg.image?\mathbf{y}_i(t&plus;1)=\mathbf{y}_i(t)\times&space;w_2" title="\mathbf{y}_i(t+1)=\mathbf{y}_i(t)\times w_2" />
