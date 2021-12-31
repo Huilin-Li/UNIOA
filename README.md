@@ -3,7 +3,7 @@
 - [ Ideas. ](#idea)
 - [ Environment. ](#env)
 - [ Example. ](#exm)
-- [ Version. ](#ver)
+- [ Versions. ](#ver)
 
 <a name="desc"></a>
 ## Description
@@ -39,10 +39,20 @@ sklearn = 1.0
 ```
 <a name="exm"></a>
 ## Example
-
+1. install relative packages
+```python
+pip install ioh == 0.3.2.3
+pip install UNIOA
+```
+2. open a .py file. For example: example.py
+3. only import UNIOA
+````python
+from UNIOA import *
+````
 $$Opt_{\mathbf{x}}: \, \mathbf{x}=1$$
 
 
 
 <a name="ver"></a>
 ## Versions
+`2021.12.31: only works in .py file now`
