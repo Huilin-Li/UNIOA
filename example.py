@@ -75,15 +75,31 @@ class Your_Opt(NatureOpt):
 
 
 if __name__ == '__main__':
-    Algs = ['BA_Opt', 'Your_Opt']
-    problems = [1,2,3,4]
-    instances = [1,2]
+    # This is for testing customized optimizer
+    # Algs = ['BA_Opt', 'Your_Opt']
+    # problems = [1,2,3,4]
+    # instances = [1,2]
+    # dimensions = [5]
+    # num_runs = 5
+    # paras_sets = {'BA_Opt': {},
+    #              'Your_Opt':{'M':10,
+    #                          'z_0':1,
+    #                          'w1': 0.8,
+    #                          'w2': 0.6,
+    #                          'w3': 0.7}}
+    # comparison.comparing(Algs, problems, instances, dimensions, num_runs, paras_sets)
+
+    # This is for discussion on M in my master thesis
+    Algs = ['BA_Opt', 'CSA_Opt', 'MFO_Opt', 'PSO_Opt', 'GOA_Opt', 'MBO_Opt', 'BOA_Opt']
+    problems = [i for i in range(1, 2)]
+    instances = [i for i in range(1, 2)]
     dimensions = [5]
-    num_runs = 5
-    paras_sets = {'BA_Opt': {},
-                 'Your_Opt':{'M':10,
-                             'z_0':1,
-                             'w1': 0.8,
-                             'w2': 0.6,
-                             'w3': 0.7}}
+    num_runs = 1
+    paras_sets = {'BA_Opt': {'M':10},
+                  'CSA_Opt': {'M':10},
+                  'MFO_Opt': {'M':10},
+                  'PSO_Opt': {'M':10},
+                  'GOA_Opt': {'M':10},
+                  'MBO_Opt': {'M':10},
+                  'BOA_Opt': {'M':10}}
     comparison.comparing(Algs, problems, instances, dimensions, num_runs, paras_sets)
