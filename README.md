@@ -44,18 +44,26 @@ sklearn = 1.0
 pip install ioh == 0.3.2.3
 pip install UNIOA
 ```
-2. open a .py file. For example: example.py
+2. open a .py file.
+```python
+For example: 
+example.py
+```
 3. only import UNIOA
 ````python
 from UNIOA import *
 ````
-4. design your optimizer in math. For example:
-- I want to use follows to improve the quality of optimization.
-    - assisting vector influencing factor $\mathbf{y}_i$.
+4. design your optimizer in math. 
+````python
+For example:
+I want to use follows to design the optimizer.
+- assisting vector influencing factor <img src="https://latex.codecogs.com/svg.image?\mathbf{y}_i" title="\mathbf{y}_i" />.
     - $\mathbf{x}$ related vector influencing factor $\mathbf{x}_{i_p}$. 
     - dynamic numberical influencing factor $z$. 
     - static numberical influencing factors $w$.
-<img src="https://latex.codecogs.com/svg.image?\textbf{y}_{i}" title="\textbf{y}_{i}" />
+
+````
+- 
 
 <a name="ver"></a>
 ## Versions
