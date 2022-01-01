@@ -49,9 +49,9 @@ sklearn = 1.0
 pip install ioh == 0.3.2.3
 pip install UNIOA
 ```
-2. open a `.py` file.
+2. open a empty `.py` file.
 ```python 
-example.py
+for example, an empty example.py
 ```
 3. only import UNIOA
 ````python
