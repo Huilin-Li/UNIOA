@@ -14,7 +14,7 @@ UNIOA can help:
 1. design your own swarm-based algorithms with only math knowledge, without any nature/bio knowledge.
 2. benchmark your optimization algorithm **Your_Opt** with other seven existing algorithms with the help of IOHprofiler.
 
-UNIOA is a small python package in which the user can design his/her own algorithm like nature-inspired algorithms. This package is inspired by standardizing nature-inspired algorithms project in which we build up a generic framework based on studying seven popular swarm-based algorithm.
+UNIOA is a small python package in which the user can design his/her own algorithm like nature-inspired algorithms. This package is inspired by [standardizing nature-inspired algorithms project](https://github.com/Huilin-Li/MasterThesisProject.git) in which we build up a generic framework based on studying seven popular swarm-based algorithm.
 <a name="idea"></a>
 ## Ideas
 We built up this generic framework that can cover seven algorithms now. The generic framework is :
