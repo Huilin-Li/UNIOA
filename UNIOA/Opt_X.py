@@ -17,19 +17,16 @@ class Opt_X:
         return new_X
 
     @staticmethod
-    def mfo(old_X, new_Y, z1, z2, w, lb_x, ub_x):
+    def mfo(old_X, sort_X, z1, z2, w, lb_x, ub_x):
         new_X = old_X.copy()
-        for i, y in enumerate(new_Y):
-            A = abs(y - old_X[i])
-            B = (z1 - 1)*np.random.rand() + 1
-            C = A * np.exp(w * B) * np.cos(B * 2 * np.pi)
+        for i, sort_x in enumerate(sort_X):
+            temp = abs(sort_x - old_X[i]) * np.exp(w * z1) * np.cos(z1 * 2 * np.pi)
             if i <= z2:
-                x = C + y
+                x = temp + sort_x
             else:
-                x = C + new_Y[z2]
+                x = temp + sort_X[z2]
             new_X[i] = np.clip(x, lb_x, ub_x)
         return new_X
-
 
     @staticmethod
     def ba(old_X, new_Y, old_x_g, old_z1, old_z2, w3, lb_x, ub_x):
@@ -43,12 +40,14 @@ class Opt_X:
         return new_X
 
     @staticmethod
-    def csa(new_Y, old_X, w1, w2, lb_x, ub_x):
+    def csa(old_X, X_p, w1, w2, lb_x, ub_x):
         new_X = old_X
         M, n = old_X.shape[0], old_X.shape[1]
         for i in range(M):
             if np.random.rand() > w1:
-                new_X[i] = np.clip(old_X[i] + np.random.rand() * w2 * (new_Y[np.random.randint(M)] - old_X[i]), lb_x, ub_x)
+                new = old_X[i] + np.random.rand() * w2 * (X_p[np.random.randint(M)] - old_X[i])
+                if np.all(new >= lb_x) & np.all(new <= ub_x):
+                    new_X[i] = new
             else:
                 new_X[i] = np.random.uniform(lb_x, ub_x, n)
         return new_X
@@ -57,7 +56,7 @@ class Opt_X:
     @jit(parallel=True)
     def goa(old_X, old_x_g, z, lb_x, ub_x, w1, w2):
         M, n = old_X.shape[0], old_X.shape[1]
-        new_X =old_X.copy()
+        new_X = old_X.copy()
         Dist = pairwise_distances(old_X, metric='euclidean')
         for i in prange(M):
             Delta_X = np.zeros(n)
@@ -67,8 +66,8 @@ class Opt_X:
                     D = Dist[i, j]
                     norm_D = 2 + np.remainder(D, 2)
                     delta_x = z * ((ub_x - lb_x) / 2) * \
-                              (w1 * np.exp(-norm_D/w2)-np.exp(-norm_D)) * \
-                              ((old_X[i] - old_X[j])/(D+2.2204e-16))
+                              (w1 * np.exp(-norm_D / w2) - np.exp(-norm_D)) * \
+                              ((old_X[i] - old_X[j]) / (D + 2.2204e-16))
                     Delta_X = Delta_X + delta_x
             new_X[i] = np.clip(z * Delta_X + old_x_g, lb_x, ub_x)
         return new_X
@@ -109,20 +108,18 @@ class Opt_X:
         temp_X = np.concatenate((new_strongs, new_weaks))
         return temp_X
 
-
     @staticmethod
-    def boa(old_X, old_X_Fit, x_g, z, w1, w2,lb_x, ub_x):
+    def boa(old_X, old_X_Fit, x_g, z, w1, w2, lb_x, ub_x):
         M = len(old_X)
         new_X = old_X.copy()
         for i in range(M):
-            if np.random.rand()>w2:
+            if np.random.rand() > w2:
                 temp = np.random.rand() ** 2 * x_g - old_X[i]
                 x = old_X[i] + temp * z * old_X_Fit[i] ** w1
             else:
-                jk = np.random.choice(M, 2, replace=False) # two indices of two neighbors
-                temp = np.random.rand()**2*old_X[jk[0]]-old_X[jk[1]]
+                jk = np.random.choice(M, 2, replace=False)  # two indices of two neighbors
+                temp = np.random.rand() ** 2 * old_X[jk[0]] - old_X[jk[1]]
                 x = old_X[i] + temp * z * old_X_Fit[i] ** w1
             new_X[i] = np.clip(x, lb_x, ub_x)
         return new_X
-
 

@@ -1,5 +1,5 @@
 from .optimizer_running import optimizer_running
-import sys,os
+
 
 
 def comparing (Algs, problems, instances, dimensions, num_runs, paras_sets):

@@ -1,4 +1,4 @@
-from UNIOA.NatureOpt import NatureOpt
+from GenericFramework.NatureOpt import NatureOpt
 
 
 # -------------------------------------------------------------------------------------------------

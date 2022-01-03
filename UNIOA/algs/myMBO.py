@@ -1,4 +1,4 @@
-from UNIOA.NatureOpt import NatureOpt
+from GenericFramework.NatureOpt import NatureOpt
 # -------------------------------------------------------------------------------------------------
 # This class implements MBO-Optimizer in the new structure.
 # -------------------------------------------------------------------------------------------------
@@ -15,7 +15,7 @@ class MBO_Opt(NatureOpt):
 
     def __call__(self):
         t = 0
-        X = self.Init_X.Init_X(M=self.M, n=self.n, lb_x=self.lb_x, ub_x=self.ub_x)  
+        X = self.Init_X.Init_X(M=self.M, n=self.n, lb_x=self.lb_x, ub_x=self.ub_x)
         X_Fit = self.Evaluate_X(X=X)
         x_g, x_g_fit = self.Init_Delta_X.Global_best(new_X=X, new_X_Fit=X_Fit)
         z = self.InitOpt_Delta_z.mbo(t=t, w4=self.w4)

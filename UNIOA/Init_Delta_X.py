@@ -18,3 +18,10 @@ class Init_Delta_X:
         x_g = new_X[best_index]
         return x_g, x_g_fit
 
+    @staticmethod
+    def Sort_X(new_X, new_X_Fit):
+        sort_X_ind = np.argsort(new_X_Fit)  # from minimum to maximum
+        sort_X = new_X[sort_X_ind]
+        sort_X_Fit = new_X_Fit[sort_X_ind]
+        return sort_X, sort_X_Fit
+

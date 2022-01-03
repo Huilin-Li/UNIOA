@@ -10,8 +10,5 @@ class Init_Delta_Y:
         ub_y = interval[1]
         Y = np.random.uniform(lb_y, ub_y, (M, n))
         return Y
-    @staticmethod
-    def x_type(X): # mfo
-        Y = X
-        return Y
+
 

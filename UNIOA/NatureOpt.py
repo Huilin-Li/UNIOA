@@ -1,11 +1,4 @@
-from .Init_X import Init_X
-from .Init_Delta_X import Init_Delta_X
-from .Init_Delta_Y import Init_Delta_Y
-from .Opt_Delta_X import Opt_Delta_X
-from .Opt_Delta_Y import Opt_Delta_Y
-from .Opt_X import Opt_X
-from .Selection import Selection
-from .InitOpt_Delta_z import InitOpt_Delta_z
+from UNIOA import *
 import numpy as np
 
 
@@ -17,7 +10,7 @@ class NatureOpt:
         self.budget = budget_factor * self.n
         self.lb_x = self.fitness_function.constraint.lb[0]
         self.ub_x = self.fitness_function.constraint.ub[1]
-        # inherits operations
+        # inherits components
         # compulsory components
         self.Init_X = Init_X
         self.Opt_X = Opt_X

@@ -1,4 +1,4 @@
-from UNIOA.NatureOpt import NatureOpt
+from GenericFramework.NatureOpt import NatureOpt
 import numpy as np
 # -------------------------------------------------------------------------------------------------
 # This class implements PSO-Optimizer in the new structure.
@@ -37,7 +37,6 @@ class PSO_Opt(NatureOpt):
             new_x_g, new_x_g_fit = self.Opt_Delta_X.Global_best(new_X=new_X, new_X_Fit=new_X_Fit, old_x_g=x_g, old_x_g_fit=x_g_fit)
             ############################
             X = new_X
-            #X_Fit = new_X_Fit
             Y = new_Y
             X_p, X_p_Fit = new_X_p, new_X_p_Fit
             x_g, x_g_fit = new_x_g, new_x_g_fit
