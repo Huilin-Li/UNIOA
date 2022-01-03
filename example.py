@@ -90,16 +90,10 @@ if __name__ == '__main__':
     # comparison.comparing(Algs, problems, instances, dimensions, num_runs, paras_sets)
 
     # This is for discussion on M in my master thesis
-    Algs = ['BA_Opt', 'CSA_Opt', 'MFO_Opt', 'PSO_Opt', 'GOA_Opt', 'MBO_Opt', 'BOA_Opt']
+    Algs = ['MBO_Opt']
     problems = [i for i in range(1, 25)]
     instances = [i for i in range(1, 6)]
     dimensions = [5,20]
     num_runs = 5
-    paras_sets = {'BA_Opt': {'M':10},
-                  'CSA_Opt': {'M':10},
-                  'MFO_Opt': {'M':10},
-                  'PSO_Opt': {'M':10},
-                  'GOA_Opt': {'M':10},
-                  'MBO_Opt': {'M':10},
-                  'BOA_Opt': {'M':10}}
+    paras_sets = {'MBO_Opt': {'M':10}}
     comparison.comparing(Algs, problems, instances, dimensions, num_runs, paras_sets)
