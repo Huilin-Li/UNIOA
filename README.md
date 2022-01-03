@@ -76,7 +76,7 @@ Opt_X.your = your_Opt_X
    (1)To <img src="https://latex.codecogs.com/svg.image?\mathbf{y}_i" title="\mathbf{y}_i" /> , the optimize method designed as <img src="https://latex.codecogs.com/svg.image?\mathbf{y}_i(t&plus;1)=\mathbf{y}_i(t)\times&space;w_2" title="\mathbf{y}_i(t+1)=\mathbf{y}_i(t)\times w_2" />
 ```python
 # initialize method selected in UNIOA
-Init_Delta_Y.your = Init_Delta_Y.x_type
+Init_Delta_Y.your = Init_Delta_Y.interval_type
 # optimize method customized by yourself
 def your_Opt_Delta_Y(old_y, w):
     new_y = old_y * w
@@ -134,7 +134,7 @@ class Your_Opt(NatureOpt):
 ```
 ```python
 # fixed position, open inputs
-        Y = self.Init_Delta_Y.x_type(X=X)
+        Y = self.Init_Delta_Y.interval_type(M=self.M, n=self.n, interval=[-1,1])
         X_ip, X_ip_Fit = self.Init_Delta_X.Personal_best(new_X=X, new_X_Fit=X_Fit)
         z = self.InitOpt_Delta_z.your(t=t, old_z=self.z_0,w=self.w1)
 ```
