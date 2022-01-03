@@ -1,3 +1,0 @@
-suite = "unknown_suite", funcId = 1, funcName = "Sphere", DIM = 5, maximization = "F", algId = "BA_Opt", algInfo = "algorithm_info"
-%
-data_f1_Sphere/IOHprofiler_f1_DIM5.dat, 1:4271|9.50917e-09, 1:3894|7.31217e-09, 1:4936|3.61139e-09, 1:18602|0.00357223, 1:4391|9.41978e-09, 2:20235|4.75756, 2:19075|0.243943, 2:17879|0.0061973, 2:4264|3.78776e-09, 2:4330|6.32741e-09

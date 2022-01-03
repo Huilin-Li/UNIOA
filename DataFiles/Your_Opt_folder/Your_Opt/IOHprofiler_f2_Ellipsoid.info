@@ -1,3 +1,0 @@
-suite = "unknown_suite", funcId = 2, funcName = "Ellipsoid", DIM = 5, maximization = "F", algId = "Your_Opt", algInfo = "algorithm_info"
-%
-data_f2_Ellipsoid/IOHprofiler_f2_DIM5.dat, 1:1|98493.6, 1:10|95515.4, 1:8|342433, 1:7|107465, 1:9|761739, 2:1|155879, 2:4|99977.9, 2:4|819947, 2:7|57577.8, 2:7|132342

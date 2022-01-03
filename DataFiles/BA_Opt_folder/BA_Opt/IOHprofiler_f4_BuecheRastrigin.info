@@ -1,3 +1,0 @@
-suite = "unknown_suite", funcId = 4, funcName = "BuecheRastrigin", DIM = 5, maximization = "F", algId = "BA_Opt", algInfo = "algorithm_info"
-%
-data_f4_BuecheRastrigin/IOHprofiler_f4_DIM5.dat, 1:10904|114.418, 1:10639|70.6413, 1:12007|142.276, 1:10421|147.252, 1:10749|50.7419, 2:10209|85.5656, 2:11438|96.5092, 2:10838|116.408, 2:11169|54.7224, 2:10956|65.6668

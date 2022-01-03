@@ -1,3 +1,0 @@
-suite = "unknown_suite", funcId = 3, funcName = "Rastrigin", DIM = 5, maximization = "F", algId = "BA_Opt", algInfo = "algorithm_info"
-%
-data_f3_Rastrigin/IOHprofiler_f3_DIM5.dat, 1:10751|9.94958, 1:10345|39.7981, 1:10551|15.9193, 1:10609|61.6864, 1:10249|87.5551, 2:13180|20.894, 2:12010|99.4945, 2:11452|65.6666, 2:11449|3.97984, 2:11392|61.7218
