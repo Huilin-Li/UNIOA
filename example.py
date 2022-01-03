@@ -8,7 +8,7 @@ Opt_X.your = your_Opt_X
 
 # influencing factors
 ## influencing factor y
-Init_Delta_Y.your = Init_Delta_Y.x_type
+Init_Delta_Y.your = Init_Delta_Y.interval_type
 def your_Opt_Delta_Y(old_y, w):
     new_y = old_y * w
     return new_y
@@ -56,7 +56,7 @@ class Your_Opt(NatureOpt):
         t = 0
         X = self.Init_X.Init_X(M=self.M, n=self.n, lb_x=self.lb_x, ub_x=self.ub_x)
         X_Fit = self.Evaluate_X(X=X)
-        Y = self.Init_Delta_Y.x_type(X=X)
+        Y = self.Init_Delta_Y.interval_type(M=self.M, n=self.n, interval=[0,0])
         X_ip, X_ip_Fit = self.Init_Delta_X.Personal_best(new_X=X, new_X_Fit=X_Fit)
         z = self.InitOpt_Delta_z.your(t=t, old_z=self.z_0,w=self.w1)
 
@@ -76,24 +76,25 @@ class Your_Opt(NatureOpt):
 
 if __name__ == '__main__':
     # This is for testing customized optimizer
-    # Algs = ['BA_Opt', 'Your_Opt']
-    # problems = [1,2,3,4]
-    # instances = [1,2]
-    # dimensions = [5]
-    # num_runs = 5
-    # paras_sets = {'BA_Opt': {},
-    #              'Your_Opt':{'M':10,
-    #                          'z_0':1,
-    #                          'w1': 0.8,
-    #                          'w2': 0.6,
-    #                          'w3': 0.7}}
-    # comparison.comparing(Algs, problems, instances, dimensions, num_runs, paras_sets)
+    #######################
+    Algs = ['BA_Opt', 'Your_Opt']
+    problems = [1,2,3,4]
+    instances = [1,2]
+    dimensions = [5]
+    num_runs = 5
+    paras_sets = {'BA_Opt': {},
+                 'Your_Opt':{'M':10,
+                             'z_0':1,
+                             'w1': 0.8,
+                             'w2': 0.6,
+                             'w3': 0.7}}
+    comparison.comparing(Algs, problems, instances, dimensions, num_runs, paras_sets)
 
     # This is for discussion on M in my master thesis
-    Algs = ['MBO_Opt']
-    problems = [i for i in range(1, 25)]
-    instances = [i for i in range(1, 6)]
-    dimensions = [5,20]
-    num_runs = 5
-    paras_sets = {'MBO_Opt': {'M':10}}
-    comparison.comparing(Algs, problems, instances, dimensions, num_runs, paras_sets)
+    # Algs = ['MBO_Opt']
+    # problems = [i for i in range(1, 25)]
+    # instances = [i for i in range(1, 6)]
+    # dimensions = [5,20]
+    # num_runs = 5
+    # paras_sets = {'MBO_Opt': {'M':10}}
+    # comparison.comparing(Algs, problems, instances, dimensions, num_runs, paras_sets)
