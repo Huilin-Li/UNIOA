@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='UNIOA',
-    version='0.0.2',
+    version='1.0',
     packages=['UNIOA', 'UNIOA.algs'],
     url='https://github.com/Huilin-Li/UNIOA.git',
     license='MIT',

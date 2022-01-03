@@ -1,4 +1,4 @@
-from GenericFramework.NatureOpt import NatureOpt
+from UNIOA.NatureOpt import NatureOpt
 # -------------------------------------------------------------------------------------------------
 # This class implements MBO-Optimizer in the new structure.
 # -------------------------------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-from GenericFramework.NatureOpt import NatureOpt
+from UNIOA.NatureOpt import NatureOpt
 import numpy as np
 # -------------------------------------------------------------------------------------------------
 # This class implements PSO-Optimizer in the new structure.

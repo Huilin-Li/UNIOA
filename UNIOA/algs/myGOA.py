@@ -1,4 +1,4 @@
-from GenericFramework.NatureOpt import NatureOpt
+from UNIOA.NatureOpt import NatureOpt
 
 # -------------------------------------------------------------------------------------------------
 # This class implements GOA-Optimizer in the new structure.
