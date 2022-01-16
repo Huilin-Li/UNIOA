@@ -6,7 +6,7 @@ class Selection:
         pass
 
     @staticmethod
-    def same_type(temp_X, temp_X_Fit): # pso, mfo, goa
+    def same_type(temp_X, temp_X_Fit): # pso, mfo, goa, csa
         new_X = temp_X
         new_X_Fit = temp_X_Fit
         return new_X, new_X_Fit
@@ -29,7 +29,7 @@ class Selection:
         return new_X, new_X_Fit
 
     @staticmethod
-    def ba_type(temp_X, temp_X_Fit, old_X, old_X_Fit, z2):
+    def ba_type(temp_X, temp_X_Fit, old_X, old_X_Fit, z2): # ba
         new_X = old_X.copy()
         new_X_Fit = old_X_Fit.copy()
         M = len(old_X)
@@ -40,7 +40,7 @@ class Selection:
         return new_X, new_X_Fit
 
     @staticmethod
-    def improve_type(temp_X, temp_X_Fit, old_X, old_X_Fit): # boa, csa
+    def improve_type(temp_X, temp_X_Fit, old_X, old_X_Fit): # boa
         M = len(temp_X)
         new_X = old_X.copy()
         new_X_Fit = old_X_Fit.copy()

@@ -4,8 +4,10 @@ from UNIOA import *
 def your_Opt_X(old_x, y, x_ip, z, w):
     new_x = ( old_x * z - y )*w + x_ip
     return new_x
+
 Opt_X.your = your_Opt_X
 
+Opt_X.your(your_Opt_X, your_Opt_X2)[0] =
 # influencing factors
 ## influencing factor y
 Init_Delta_Y.your = Init_Delta_Y.interval_type
@@ -27,11 +29,7 @@ def your_InitOpt_Delta_z(t, old_z, w):
     return new_z
 InitOpt_Delta_z.your = your_InitOpt_Delta_z
 
-# main optimization on x
-def your_Opt_X(old_x, y, x_ip, z, w):
-    new_x = ( old_x * z - y )*w + x_ip
-    return new_x
-Opt_X.your = your_Opt_X
+
 
 # Selection method
 Selection.your = Selection.improve_type
@@ -77,24 +75,17 @@ class Your_Opt(NatureOpt):
 if __name__ == '__main__':
     # This is for testing customized optimizer
     #######################
-    Algs = ['BA_Opt', 'Your_Opt']
-    problems = [1,2,3,4]
-    instances = [1,2]
+    Algs = ['BA_UNIOA', 'BOA_UNIOA', 'MBO_UNIOA', 'MFO_UNIOA', 'CSA_UNIOA', 'PSO_UNIOA', 'GOA_UNIOA']
+    problems = [1]
+    instances = [1]
     dimensions = [5]
-    num_runs = 5
-    paras_sets = {'BA_Opt': {},
-                 'Your_Opt':{'M':10,
-                             'z_0':1,
-                             'w1': 0.8,
-                             'w2': 0.6,
-                             'w3': 0.7}}
+    num_runs = 1
+    paras_sets = {'BA_UNIOA': {},
+                  'BOA_UNIOA': {},
+                  'GOA_UNIOA': {},
+                  'MFO_UNIOA': {},
+                  'MBO_UNIOA': {},
+                  'CSA_UNIOA': {},
+                  'PSO_UNIOA': {},
+                 }
     comparison.comparing(Algs, problems, instances, dimensions, num_runs, paras_sets)
-
-    # This is for discussion on M in my master thesis
-    # Algs = ['MBO_Opt']
-    # problems = [i for i in range(1, 25)]
-    # instances = [i for i in range(1, 6)]
-    # dimensions = [5,20]
-    # num_runs = 5
-    # paras_sets = {'MBO_Opt': {'M':10}}
-    # comparison.comparing(Algs, problems, instances, dimensions, num_runs, paras_sets)

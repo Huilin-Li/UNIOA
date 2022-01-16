@@ -5,7 +5,7 @@ from UNIOA.NatureOpt import NatureOpt
 # This class implements CSA-Optimizer in the new structure.
 # -------------------------------------------------------------------------------------------------
 
-class CSA_Opt(NatureOpt):
+class CSA_UNIOA(NatureOpt):
     def __init__(self, func, hyperparams_set, budget_factor=1e4):
         super().__init__(func, budget_factor)
         self.M = hyperparams_set.get('popsize', 50)
@@ -17,12 +17,9 @@ class CSA_Opt(NatureOpt):
         X = self.Init_X.Init_X(M=self.M, n=self.n, lb_x=self.lb_x, ub_x=self.ub_x)
         X_Fit = self.Evaluate_X(X=X)  # Evaluate X
         X_p, X_p_Fit = self.Init_Delta_X.Personal_best(new_X=X, new_X_Fit=X_Fit)
-        # Y = self.Init_Delta_Y.x_type(X=X)
 
         # Optimizing
         while not self.stop:
-            # AOpt Y(t+1)
-            # new_Y = self.Opt_Delta_Y.csa(old_Y=Y, fitness_function=self.fitness_function, old_X=X, old_X_Fit=X_Fit)
             # OOpt temp_X(t+1)
             temp_X = self.Opt_X.csa(old_X=X, X_p=X_p, w1=self.w1, w2=self.w2, lb_x=self.lb_x, ub_x=self.ub_x)
             # Evaluate

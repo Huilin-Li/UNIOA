@@ -161,12 +161,12 @@ class Your_Opt(NatureOpt):
 Want to benchmark and compare Bat-optimizer and Your_Opt on 4 problems with 2 instances and 5 runs.
 ```python
 if __name__ == '__main__':
-    Algs = ['BA_Opt', 'Your_Opt']
+    Algs = ['BA_UNIOA', 'Your_Opt']
     problems = [1,2,3,4]
     instances = [1,2]
     dimensions = [5]
     num_runs = 5
-    paras_sets = {'BA_Opt': {},
+    paras_sets = {'BA_UNIOA': {},
                  'Your_Opt':{'M':10,
                              'z_0':1,
                              'w1': 0.8,

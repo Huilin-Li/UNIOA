@@ -3,7 +3,7 @@ from UNIOA.NatureOpt import NatureOpt
 # This class implements MBO-Optimizer in the new structure.
 # -------------------------------------------------------------------------------------------------
 
-class MBO_Opt(NatureOpt):
+class MBO_UNIOA(NatureOpt):
     def __init__(self, func, hyperparams_set, budget_factor=1e4):
         super().__init__(func, budget_factor)
         self.M = hyperparams_set.get('popsize', 50)

@@ -12,7 +12,7 @@ class Opt_Delta_Y:
             new_Y[i] = w1 * old_y \
                        + np.random.uniform(0, w2) * (old_X_p[i] - old_X[i]) \
                        + np.random.uniform(0, w3) * (old_x_g - old_X[i])  # update equation.
-            return new_Y
+        return new_Y
 
     @staticmethod
     def ba(old_Y, old_X, old_x_g, w4_interval):

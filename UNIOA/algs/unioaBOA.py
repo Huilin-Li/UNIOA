@@ -5,7 +5,7 @@ from UNIOA.NatureOpt import NatureOpt
 # This class implements BOA-Optimizer in the new structure.
 # -------------------------------------------------------------------------------------------------
 
-class BOA_Opt(NatureOpt):
+class BOA_UNIOA(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor=1e4):
         super().__init__(func, budget_factor)
         self.M = hyperparams_set.get('popsize', 50)

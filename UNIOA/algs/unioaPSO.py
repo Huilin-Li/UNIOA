@@ -4,7 +4,7 @@ import numpy as np
 # This class implements PSO-Optimizer in the new structure.
 # -------------------------------------------------------------------------------------------------
 
-class PSO_Opt(NatureOpt):
+class PSO_UNIOA(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor=1e4):
         super().__init__(func, budget_factor)
         self.M = hyperparams_set.get('popsize', 25)

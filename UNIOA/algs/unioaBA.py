@@ -4,7 +4,7 @@ from UNIOA.NatureOpt import NatureOpt
 # -------------------------------------------------------------------------------------------------
 # This class implements Bat-Optimizer in the new structure.
 # -------------------------------------------------------------------------------------------------
-class BA_Opt(NatureOpt):
+class BA_UNIOA(NatureOpt):
     def __init__(self, func, hyperparams_set, budget_factor=1e4):
         super().__init__(func, budget_factor)
         self.M = hyperparams_set.get('popsize', 20)
@@ -17,9 +17,13 @@ class BA_Opt(NatureOpt):
         self.w4_interval = hyperparams_set.get('w4-interval', [0, 2])
 
     def __call__(self):
+        # Initializing
         t = 0
+        # Init_X
         X = self.Init_X.Init_X(M=self.M, n=self.n, lb_x=self.lb_x, ub_x=self.ub_x)
-        X_Fit = self.Evaluate_X(X=X)  # Evaluate X
+        # Evaluate X
+        X_Fit = self.Evaluate_X(X=X)
+        # Init_Delta
         Y = self.Init_Delta_Y.interval_type(M=self.M, n=self.n, interval=self.y_interval)
         x_g, x_g_fit = self.Init_Delta_X.Global_best(new_X=X, new_X_Fit=X_Fit)
         z1 = self.InitOpt_Delta_z.ba1(t=t, z1_0=self.z1_0, w1=self.w1)
@@ -27,7 +31,7 @@ class BA_Opt(NatureOpt):
 
         # Optimizing
         while not self.stop:
-            # Aopt y(t+1)
+            # update to y(t+1)
             new_Y = self.Opt_Delta_Y.ba(old_Y=Y, old_X=X, old_x_g=x_g, w4_interval=self.w4_interval)
             # Oopt temp_x(t+1)
             temp_X = self.Opt_X.ba(old_X=X, new_Y=new_Y, old_x_g=x_g, old_z1=z1, old_z2=z2, w3=self.w3, lb_x=self.lb_x,

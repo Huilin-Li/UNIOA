@@ -9,7 +9,7 @@ from pydoc import locate
 def optimizer_running(problems, instances, dimensions, num_runs, paras_set, optimizer_name):
     t = 0
     optimizer_name_temp = optimizer_name
-    UNIOA_algs = ['BA_Opt', 'CSA_Opt', 'MFO_Opt', 'PSO_Opt', 'GOA_Opt', 'MBO_Opt', 'BOA_Opt']
+    UNIOA_algs = ['BA_UNIOA', 'CSA_UNIOA', 'MFO_UNIOA', 'PSO_UNIOA', 'GOA_UNIOA', 'MBO_UNIOA', 'BOA_UNIOA']
     if optimizer_name not in UNIOA_algs:
         t = 1
         file_name = os.path.basename(sys.argv[0])[:-2]

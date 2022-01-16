@@ -2,9 +2,8 @@ import numpy as np
 
 
 class InitOpt_Delta_z:
-    @staticmethod
-    def your():
-        pass
+    def __init__(self):
+        self.your = []
 
     @staticmethod
     def ba1(t, z1_0, w1):
