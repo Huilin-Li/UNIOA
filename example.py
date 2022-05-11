@@ -1,7 +1,7 @@
 from UNIOA import *
 
 # main optimization on x
-def your_Opt_X(old_x, y, x_g, z1, z2, w):
+def your_Opt_X(old_x, y, x_g, z1, z2, w) :
     new_x = ( old_x * z1 + y * z2 ) * w + x_g
     return new_x
 Opt_X.your = your_Opt_X
@@ -28,9 +28,9 @@ def your_InitOpt_Delta_z1(t, old_z, w):
 def your_InitOpt_Delta_z2(t, old_z, budget):
     new_z = (t/budget) * old_z
     return new_z
-InitOpt_Delta_zw = InitOpt_Delta_z()
-InitOpt_Delta_zw.your.append(your_InitOpt_Delta_z1)
-InitOpt_Delta_zw.your.append(your_InitOpt_Delta_z2)
+A = InitOpt_Delta_z()
+A.your.append(your_InitOpt_Delta_z1)
+A.your.append(your_InitOpt_Delta_z2)
 
 # Selection method
 Selection.your = Selection.improve_type
@@ -52,6 +52,10 @@ class Your_Opt(NatureOpt):
         self.w2 = hyperparams_set.get('w2')
         self.w3 = hyperparams_set.get('w3')
 
+        self.InitOpt_Delta_zw = XXX
+
+    def assign_method(self, xxx):
+        InitOpt_Delta_zw
 
     def __call__(self):
         t = 0
