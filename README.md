@@ -180,7 +180,3 @@ if __name__ == '__main__':
 Upload data to [IOHanalyzer](https://iohanalyzer.liacs.nl/). Conclude Your_Opt performs worse than Bat_Opt.
 ![results](ERT_Mult-2021-12-31.png)
 
-
-<a name="ver"></a>
-## Versions
-`2021.12.31: only works in .py file now`
