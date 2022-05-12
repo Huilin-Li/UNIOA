@@ -18,7 +18,7 @@ UNIOA is a small python package in which the user can design his/her own algorit
 <a name="idea"></a>
 ## Ideas
 We built up this generic framework that can cover seven algorithms now. The generic framework is :
-![framework](framework.png)
+![framework](unioa.png)
 - **line1** iteration counter. At this moment, the optimization starts.
 - **line2** initialize the initial pop with size M. Compulsory part. Fixed in UNIOA.
 - **line3** evaluate fitness. Compulsory part. Fixed in UNIOA with the help of IOH.
