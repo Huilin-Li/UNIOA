@@ -1,6 +1,11 @@
 import numpy as np
 
 class Selection:
+
+    @staticmethod
+    def your():
+        pass
+
     @staticmethod
     def same_type(temp_X, temp_X_Fit): # pso, mfo, goa, csa
         new_X = temp_X

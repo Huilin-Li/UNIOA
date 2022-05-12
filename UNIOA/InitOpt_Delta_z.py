@@ -2,6 +2,11 @@ import numpy as np
 
 class InitOpt_Delta_z:
     @staticmethod
+    def your():
+        pass
+
+
+    @staticmethod
     def ba1(t, z1_0, w1):
         new_z1 = z1_0 * (1 - np.exp(-w1 * t))
         return new_z1

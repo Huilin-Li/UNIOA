@@ -4,6 +4,10 @@ import numpy as np
 from numba import jit, prange
 
 class Opt_X:
+    @staticmethod
+    def your():
+        pass
+
     # <editor-fold desc="2 defs for ba: ba, ba_but_asyncE">
     @staticmethod
     def ba(old_X, new_Y, old_x_g, old_z1, old_z2, w3, lb_x, ub_x):

@@ -2,6 +2,10 @@ import numpy as np
 
 class Opt_Delta_X:
     @staticmethod
+    def your():
+        pass
+
+    @staticmethod
     def Personal_best(new_X, new_X_Fit, old_X_p, old_X_p_Fit):
         new_X_p = old_X_p.copy()
         new_X_p_Fit = old_X_p_Fit.copy()

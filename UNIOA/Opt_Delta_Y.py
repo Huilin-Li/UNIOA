@@ -3,6 +3,10 @@ from UNIOA_Framework.LevyFlight import *
 
 
 class Opt_Delta_Y:
+
+    @staticmethod
+    def your():
+        pass
     @staticmethod
     def pso(old_X, old_Y, old_X_p, old_x_g, w1, w2, w3):
         new_Y = old_Y.copy()
