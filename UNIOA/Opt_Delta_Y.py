@@ -1,4 +1,4 @@
-from UNIOA_Framework.LevyFlight import *
+from .LevyFlight import *
 
 
 

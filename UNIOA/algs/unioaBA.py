@@ -1,4 +1,4 @@
-from UNIOA_Framework.NatureOpt import NatureOpt
+from UNIOA.NatureOpt import NatureOpt
 
 # This class implements Bat-Optimizer in the UNIOA framework.
 # E is sync
@@ -10,7 +10,7 @@ class BA_UNIOA(NatureOpt):
         super().__init__(func, budget_factor)
         self.M = hyperparams_set.get('popsize', 20)
         self.y_interval = hyperparams_set.get('y-interval', [0, 0])
-        self.z1_0 = hyperparams_set.get('z1_0', 1)
+        self.z1_0 = hyperparams_set.get('z_0', 1)
         self.z2_0 = hyperparams_set.get('z2_0', 1)
         self.w1 = hyperparams_set.get('w1', 0.1)
         self.w2 = hyperparams_set.get('w2', 0.97)

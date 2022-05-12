@@ -1,5 +1,5 @@
 from sklearn.metrics import pairwise_distances
-from UNIOA_Framework.LevyFlight import Levy
+from .LevyFlight import Levy
 import numpy as np
 from numba import jit, prange
 

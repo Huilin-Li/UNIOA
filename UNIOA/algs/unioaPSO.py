@@ -1,4 +1,4 @@
-from UNIOA_Framework.NatureOpt import NatureOpt
+from UNIOA.NatureOpt import NatureOpt
 
 
 # This class implements PSO-Optimizer in the UNIOA framework.

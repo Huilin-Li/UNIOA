@@ -1,4 +1,4 @@
-from UNIOA_Framework.NatureOpt import NatureOpt
+from UNIOA.NatureOpt import NatureOpt
 
 # MothFlame-Optimizer in the UNIOA framework.
 # E is sync
