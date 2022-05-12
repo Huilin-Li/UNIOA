@@ -1,8 +1,9 @@
-from UNIOA.NatureOpt import NatureOpt
+from UNIOA_Framework.NatureOpt import NatureOpt
 
-# -------------------------------------------------------------------------------------------------
-# This class implements GOA-Optimizer in the new structure.
-# -------------------------------------------------------------------------------------------------
+
+# This class implements GOA-Optimizer in the UNIOA framework.
+# E is sync
+# G is sync
 
 class GOA_UNIOA(NatureOpt):
     def __init__(self, func, hyperparams_set, budget_factor=1e4):

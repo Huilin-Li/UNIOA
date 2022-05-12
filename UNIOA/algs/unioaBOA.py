@@ -1,9 +1,9 @@
-from UNIOA.NatureOpt import NatureOpt
+from UNIOA_Framework.NatureOpt import NatureOpt
 
 
-# -------------------------------------------------------------------------------------------------
-# This class implements BOA-Optimizer in the new structure.
-# -------------------------------------------------------------------------------------------------
+# This class implements BOA-Optimizer in the UNIOA framework.
+# E is sync
+# G is sync
 
 class BOA_UNIOA(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor=1e4):
@@ -22,17 +22,15 @@ class BOA_UNIOA(NatureOpt):
         z = self.InitOpt_Delta_z.boa(t=t, old_z=self.z_0, budget=self.budget)
 
         while not self.stop:
-            # Opt temp_x(t+1)
+            # generate temp_X(t+1)
             temp_X = self.Opt_X.boa(old_X=X, old_X_Fit=X_Fit, x_g=x_g, z=z, w1=self.w1, w2=self.w2, lb_x=self.lb_x, ub_x=self.ub_x)
+            # evaluate temp_X(t+1)
             temp_X_Fit = self.Evaluate_X(X=temp_X)
-            # Selection
-            new_X, new_X_Fit = self.Selection.improve_type(temp_X=temp_X, temp_X_Fit=temp_X_Fit, old_X=X, old_X_Fit=X_Fit)
+            # selection
+            X, X_Fit = self.Selection.improve_type(temp_X=temp_X, temp_X_Fit=temp_X_Fit, old_X=X, old_X_Fit=X_Fit)
             # ----------------------------
-            t = t + 1
-            new_x_g, new_x_g_fit = self.Opt_Delta_X.Global_best(new_X=new_X, new_X_Fit=new_X_Fit, old_x_g=x_g, old_x_g_fit=x_g_fit)
-            new_z = self.InitOpt_Delta_z.boa(t=t, old_z=z, budget=self.budget)
+            x_g, x_g_fit = self.Opt_Delta_X.Global_best(new_X=X, new_X_Fit=X_Fit, old_x_g=x_g, old_x_g_fit=x_g_fit)
+            z = self.InitOpt_Delta_z.boa(t=t+1, old_z=z, budget=self.budget)
             #######################################
-            X = new_X
-            X_Fit = new_X_Fit
-            x_g, x_g_fit = new_x_g, new_x_g_fit
-            z = new_z
+            t = t + 1
+

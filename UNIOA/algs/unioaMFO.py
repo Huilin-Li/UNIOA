@@ -1,8 +1,8 @@
-from UNIOA.NatureOpt import NatureOpt
+from UNIOA_Framework.NatureOpt import NatureOpt
 
-# -------------------------------------------------------------------------------------------------
-# MothFlame-Optimizer in the new structure.
-# -------------------------------------------------------------------------------------------------
+# MothFlame-Optimizer in the UNIOA framework.
+# E is sync
+# G is sync
 
 class MFO_UNIOA(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor=1e4):
@@ -14,30 +14,27 @@ class MFO_UNIOA(NatureOpt):
         t = 0
         X = self.Init_X.Init_X(M=self.M, n=self.n, lb_x=self.lb_x, ub_x=self.ub_x)
         X_Fit = self.Evaluate_X(X=X)
-        #Y = self.Init_Delta_Y.x_type(X=X)
         sort_X, sort_X_Fit = self.Init_Delta_X.Sort_X(new_X=X, new_X_Fit=X_Fit)
         z1 = self.InitOpt_Delta_z.mfo1(t=t, budget=self.budget)
         z2 = self.InitOpt_Delta_z.mfo2(t=t, M=self.M, budget=self.budget)
 
         # optimize process
         while not self.stop:
-            # AOptimize y(t+1)
-            #new_Y = self.Opt_Delta_Y.mfo(t=t, old_Y=Y, fitness_function=self.fitness_function, old_X=X, old_X_Fit=X_Fit)
-            # OOptimize temp_X(t+1)
+            # Optimize temp_X(t+1)
             temp_X = self.Opt_X.mfo(old_X=X, sort_X = sort_X, z1=z1, z2=z2, w=self.w, lb_x=self.lb_x, ub_x=self.ub_x )
             # Evaluate
             temp_X_Fit = self.Evaluate_X(X=temp_X)
             # Selection
             new_X, new_X_Fit = self.Selection.same_type(temp_X=temp_X, temp_X_Fit=temp_X_Fit)
-
             # ----------------------------
-            t = t + 1
             new_sort_X, new_sort_X_Fit = self.Opt_Delta_X.Sort_X(new_X=new_X, new_X_Fit=new_X_Fit, old_X=X, old_X_Fit=X_Fit)
-            new_z1 = self.InitOpt_Delta_z.mfo1(t=t, budget=self.budget)
-            new_z2 = self.InitOpt_Delta_z.mfo2(t=t, M=self.M, budget=self.budget)
-            ##################################
-            X = new_X
-            X_Fit= new_X_Fit
-            sort_X = new_sort_X
+            new_z1 = self.InitOpt_Delta_z.mfo1(t=t+1, budget=self.budget)
+            new_z2 = self.InitOpt_Delta_z.mfo2(t=t+1, M=self.M, budget=self.budget)
+            # ----------------------------
+            X = new_X.copy()
+            X_Fit= new_X_Fit.copy()
+            sort_X = new_sort_X.copy()
             z1 = new_z1
             z2 = new_z2
+            ##################################
+            t = t + 1
