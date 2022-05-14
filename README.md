@@ -6,7 +6,6 @@
   - [ customized optimizer. ](#exm1)
   - [ benchmark and comparison. ](#exm2)
   - [ results of example experiment. ](#exm3)
-- [ Versions. ](#ver)
 
 <a name="desc"></a>
 ## Description
@@ -166,6 +165,6 @@ if __name__ == '__main__':
 
 <a name="exm3"></a>
 ### results of example experiment
-Upload data to [IOHanalyzer](https://iohanalyzer.liacs.nl/). Conclude Your_Opt performs worse than Bat_Opt.
+Upload data to [IOHanalyzer](https://iohanalyzer.liacs.nl/). Conclude Your_Opt performs worse than Bat_UNIOA.
 ![results](ERT_Mult-2021-12-31.png)
 
