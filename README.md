@@ -166,5 +166,6 @@ if __name__ == '__main__':
 <a name="exm3"></a>
 ### results of example experiment
 Upload data to [IOHanalyzer](https://iohanalyzer.liacs.nl/). Conclude Your_Opt performs worse than Bat_UNIOA.
-![results](ERT_Mult-2021-12-31.png)
+
+![ERT_Mult-2021-12-31](https://user-images.githubusercontent.com/52614985/170840401-93bdee18-9b8d-40a1-9bca-b753934e31e2.png)
 
